@@ -1,21 +1,23 @@
 buildscript {
     repositories {
-        jcenter()
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
          //google()
          maven { url 'http://maven.google.com' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        
+
     }
 }
 
 allprojects {
     repositories {
        // jcenter()
-        jcenter()
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
       //  maven { url 'http://maven.google.com' }
-
-
     }
 }
