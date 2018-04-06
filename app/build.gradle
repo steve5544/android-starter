@@ -1,16 +1,23 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: '*.jar')
+    implementation fileTree(include: '*.jar', dir: 'libs')
 }
 
 android {
+    signingConfigs {
+        debug {
+        }
+        release {
+            keyPassword project["keyPass"]
+            storeFile file(project["storeFilePath"])
+            storePassword project["storePass"]
+        }
+    }
     compileSdkVersion 27
     buildToolsVersion "27.0.3"
-
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 27
     }
-
 }
